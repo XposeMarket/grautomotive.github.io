@@ -31,7 +31,15 @@
     .container{max-width:var(--max);margin:0 auto;padding:0 20px}
 
     /* Top bar */
-    .topbar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.topbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;             /* above everything */
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
     .topbar .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:.5px}
     .brand .logo{width:42px;height:42px;border-radius:10px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;box-shadow:var(--shadow)}
@@ -369,10 +377,7 @@ input, select, textarea { min-height:44px; padding:.75rem .9rem; }
 }
 
   </style>
-<details class="nav-mobile">
-  <summary>Menu</summary>
-  <nav>…links…</nav>
-</details>
+
 
 <style>
 .nav-mobile summary { cursor:pointer; padding:.5rem .75rem; border:1px solid #e5e7eb; border-radius:10px; }
@@ -650,7 +655,6 @@ input, select, textarea { min-height:44px; padding:.75rem .9rem; }
   <div class="stickybar" role="navigation" aria-label="Sticky mobile actions">
     <div class="container">
       <a class="btn primary" href="tel:13019370026"><i class="fa-solid fa-phone"></i> Call</a>
-      <a class="btn" href="#book"><i class="fa-solid fa-calendar-check"></i> Book</a>
       <a class="btn" href="https://maps.google.com/?q=10800+Hanna+St+Suite+S,+Beltsville,+MD+20705" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> Directions</a>
     </div>
   </div>
@@ -809,6 +813,15 @@ input, select, textarea { min-height:44px; padding:.75rem .9rem; }
   el.addEventListener('mouseleave', start);
 
   go(0); start();
+})();
+</script>
+<script>
+(() => {
+  const header = document.querySelector('.topbar');
+  if (!header) return;
+  const setPad = () => { document.body.style.paddingTop = header.offsetHeight + 'px'; };
+  setPad();
+  window.addEventListener('resize', setPad);
 })();
 </script>
 
