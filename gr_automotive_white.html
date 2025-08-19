@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GR Automotive | Auto Repair, Wheel Alignment & Performance Shop in Beltsville, MD</title>
+  <meta name="description" content="GR Automotive provides wheel alignments, performance modifications, routine maintenance, wheels & tires, cosmetic mods, and suspension work in Beltsville, MD. Book an appointment today." />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{
+      /* Black / White with Red accents */
+      --bg:#ffffff;          /* white base */
+      --bg-2:#f6f7f9;        /* light gray for subtle sections */
+      --card:#ffffff;        /* white card */
+      --text:#111111;        /* near-black text */
+      --muted:#6b7280;       /* gray body text */
+      --line:#e5e7eb;        /* light borders */
+      --accent:#e11d48;      /* red */
+      --ring:rgba(225,29,72,.35);
+      --max:1200px;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    /* Top bar */
+    .topbar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+    .topbar .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:.5px}
+    .brand .logo{width:42px;height:42px;border-radius:10px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;box-shadow:var(--shadow)}
+    .brand .logo img{width:90%;height:90%;object-fit:contain;display:block}
+    nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+    nav a{color:#374151}
+    nav a:hover, nav a:focus{color:var(--accent)}
+    .cta-btn{background:var(--accent);color:#fff;padding:10px 16px;border-radius:999px;font-weight:700;border:none}
+    .cta-btn:hover{filter:brightness(1.06)}
+
+    /* Hero */
+    .hero{position:relative;min-height:78vh;display:grid;place-items:center;border-bottom:1px solid var(--line)}
+    .hero:before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=2069&auto=format&fit=crop') center/cover no-repeat;filter:brightness(.55)}
+    .hero .glass{position:relative;max-width:var(--max);margin:auto;padding:48px;border-radius:var(--radius);background:rgba(255,255,255,.88);box-shadow:var(--shadow);border:1px solid var(--line)}
+.eyebrow{font-family:"DM Serif Display",serif;
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  font-size: clamp(28px, 1rem + 1vw, 56px);
+  line-height: 1.2;
+}
+    h1{font-family:"DM Serif Display",serif;font-size: clamp(14px, 3vw, 28px);line-height:1.05;margin:0;color:var(--text)}
+    h1 span{color:var(--accent)}
+    .sub{color:var(--muted);font-size: clamp(14px, 2.6vw, 18px);max-width:900px;margin-top:12px}
+    .hero-actions{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--text)}
+    .btn:hover{border-color:#111}
+    .btn.primary{background:var(--accent);border-color:transparent;color:#fff}
+
+    /* Social icons in hero */
+    .hero .social-links{position:absolute;right:24px;bottom:20px;display:flex;gap:10px}
+    .hero .social-links a{width:38px;height:38px;display:grid;place-items:center;border-radius:999px;background:#fff;color:var(--text);border:1px solid var(--line);box-shadow:var(--shadow)}
+    .hero .social-links a:hover{background:var(--accent);color:#fff;border-color:transparent}
+
+    /* Quick cards */
+    .quick{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:-40px auto 40px;position:relative;z-index:5}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:14px;color:var(--text)}
+    .card i{font-size:22px;color:#fff;background:var(--accent);padding:12px;border-radius:12px;box-shadow:0 6px 14px rgba(225,29,72,.25)}
+    .card b{display:block}
+    .muted{color:var(--muted)}
+
+    /* Section pattern */
+    section{padding:72px 0}
+    .section-title{font-family:"DM Serif Display",serif;color:var(--text);font-size: clamp(26px, 4.5vw, 40px);text-align:center;margin:0 0 10px}
+    .section-title::after{content:'';display:block;width:72px;height:3px;background:var(--accent);margin:12px auto 0;border-radius:999px}
+    .section-lead{color:var(--muted);text-align:center;max-width:820px;margin:0 auto 32px}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+    .service h3{margin:6px 0 8px;color:var(--text)}
+    .service p{color:var(--muted);margin:0 0 14px}
+    .service .tag{display:inline-block;background:var(--accent);color:#fff;padding:4px 10px;border-radius:999px;font-size:12px}
+
+    /* About */
+    .about{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .about .photo{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .about img{display:block;width:100%;height:auto}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .gallery .g{aspect-ratio:1/1;border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .gallery img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05)}
+
+    /* Reviews */
+    .reviews{max-width:900px;margin:0 auto}
+    .quote{background:#f8fafc;border:1px solid var(--line);border-radius:24px;padding:26px;text-align:center;color:var(--text)}
+    .quote footer{margin-top:10px;color:var(--muted)}
+
+    /* Form */
+    .form-wrap{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+    .form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);color:var(--text)}
+    label{font-size:14px;color:#374151}
+    input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#fff;color:#111;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 6px var(--ring)}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .submit{margin-top:8px}
+    .small{font-size:12px;color:var(--muted)}
+
+    /* Footer (black for contrast) */
+    footer{border-top:1px solid var(--line);padding:40px 0 90px;background:#111;color:#fff}
+    .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
+    .hours li{list-style:none;color:#d1d5db;padding:4px 0}
+    .social a{margin-right:12px;opacity:.9;color:#fff}
+    footer a:hover{color:var(--accent)}
+
+    /* Sticky mobile bar */
+    .stickybar{position:fixed;inset:auto 0 0 0;background:#fff;border-top:1px solid var(--line);display:none;z-index:80}
+    .stickybar .container{display:flex;gap:10px}
+    .stickybar a{flex:1;text-align:center;padding:14px 12px}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .services{grid-template-columns:1fr 1fr}
+      .about{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+      .form-wrap{grid-template-columns:1fr}
+      .cols{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      nav ul{display:none}
+      .quick{grid-template-columns:1fr;}
+      .services{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .cols{grid-template-columns:1fr}
+      .stickybar{display:block}
+    }
+.slideshow{
+  position: relative;
+  width: 100%;
+  height: 420px;                /* adjust to match the form's height if needed */
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 18px 40px rgba(0,0,0,.15);
+}
+.slideshow .slide{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .45s ease;
+}
+.slideshow .slide.is-active{ opacity: 1; }
+.slideshow img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* keeps images cropped cleanly */
+  display: block;
+}
+
+/* arrows */
+.ss-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.ss-prev{ left: 10px; }
+.ss-next{ right: 10px; }
+.ss-nav:hover{ background: rgba(0,0,0,.75); }
+
+/* dots */
+.ss-dots{
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.ss-dots button{
+  width: 9px; height: 9px; border-radius: 50%;
+  background: #bdbdbd; border: 0; cursor: pointer;
+}
+.ss-dots button.active{
+  background: var(--accent, #e11d2a); /* your red */
+}
+/* --- Review slider: white card style --- */
+.rv-slider{
+  background:#fff;
+  border:1px solid #e5e7eb;   /* light gray border */
+  border-radius:24px;
+  padding:32px 32px 48px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  color:#111;
+  min-height:180px;
+}
+
+.rv-slide{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  gap:12px;
+  opacity:0;
+  position:absolute;
+  inset:0;
+  padding:24px;
+  transition:opacity .35s ease;
+}
+.rv-slide.is-active{ opacity:1; }
+
+.rv-stars{ color:#f5b301; font-size:18px; letter-spacing:1px; }
+.rv-quote{ font-size:16px; line-height:1.6; max-width:720px; margin:0; }
+
+/* remove footer entirely */
+.rv-footer{ display:none; }
+
+/* nav buttons */
+.rv-nav{
+  background:rgba(0,0,0,.5);
+  color:#fff;
+  border:0;
+  border-radius:999px;
+  padding:8px 10px;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+}
+.rv-prev{ left:12px; } 
+.rv-next{ right:12px; }
+.rv-nav:hover{ background:rgba(0,0,0,.7); }
+
+/* dots */
+.rv-dots{ position:absolute; bottom:14px; left:50%; transform:translateX(-50%); display:flex; gap:8px; }
+.rv-dots button{ width:8px; height:8px; border-radius:50%; border:0; background:#cfcfcf; cursor:pointer; }
+.rv-dots button.active{ background:var(--accent,#e11d2a); }
+
+
+.google-attrib{ margin-top:10px; font-size:12px; color:#666; text-align:center; }
+/* --- Fix review slider colors/spacing on dark box --- */
+.rv-slider{
+  background:#111;                /* dark card */
+  border:1px solid rgba(255,255,255,.08);
+  color:#fff;                     /* default text color */
+  padding:28px 28px 44px;
+  min-height: 180px;              /* ensure visible height */
+}
+
+.rv-slide{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  gap:10px;
+}
+
+.rv-stars{ color:#f5b301; }       /* gold stars */
+.rv-quote{
+  color:#fff;                     /* main quote visible on dark */
+  font-size:16px;
+  line-height:1.6;
+  margin:0;
+  max-width: 780px;               /* keeps line length comfy */
+}
+.rv-footer{
+  color:#cbd5e1;                  /* soft gray on dark */
+}
+.rv-link{ color:var(--accent,#e11d2a); }
+.rv-link:hover{ text-decoration:underline; }
+
+/* arrows over dark */
+.rv-nav{
+  background:rgba(0,0,0,.65);
+  color:#fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+.rv-nav:hover{ background:rgba(0,0,0,.85); }
+
+/* dots on dark */
+.rv-dots button{ background:#8f9aa8; }
+.rv-dots button.active{ background:var(--accent,#e11d2a); }
+
+/* make sure controls sit above slides */
+.rv-nav, .rv-dots{ z-index: 2; }
+
+/* === Reviews v2 (white card) === */
+.rv2-wrap{ display:flex; justify-content:center; }
+.rv2-slider{
+  position:relative;
+  width:min(980px, 92vw);
+  min-height:180px;
+  background:#fff !important;
+  color:#111 !important;
+  border:1px solid #e5e7eb !important;
+  border-radius:24px !important;
+  padding:32px 32px 48px !important;
+  box-shadow:0 6px 18px rgba(0,0,0,.06) !important;
+  overflow:hidden;
+}
+.rv2-slide{
+  position:absolute; inset:0; padding:24px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; gap:12px;
+  opacity:0; transition:opacity .35s ease;
+}
+.rv2-active{ opacity:1; }
+.rv2-stars{ color:#f5b301; font-size:18px; letter-spacing:1px; }
+.rv2-quote{ margin:0; font-size:16px; line-height:1.6; max-width:720px; }
+
+.rv2-nav{
+  position:absolute; top:50%; transform:translateY(-50%);
+  border:0; background:rgba(0,0,0,.5); color:#fff; padding:8px 10px;
+  border-radius:999px; cursor:pointer;
+}
+.rv2-prev{ left:12px; } .rv2-next{ right:12px; }
+.rv2-nav:hover{ background:rgba(0,0,0,.7); }
+
+.rv2-dots{ position:absolute; left:50%; bottom:14px; transform:translateX(-50%); display:flex; gap:8px; }
+.rv2-dots button{
+  width:8px; height:8px; border-radius:50%; border:0; background:#cfcfcf; cursor:pointer;
+}
+.rv2-dots button.rv2-active{ background:var(--accent,#e11d2a); }
+/* Fluid media + no accidental horizontal scroll */
+img, video, canvas, svg { max-width:100%; height:auto; }
+html, body { overflow-x:hidden; }
+*, *::before, *::after { box-sizing:border-box; }
+
+/* Mobile-first: stack 2-column sections by default */
+.two-col, .form-grid { display:grid; grid-template-columns:1fr; gap:16px; }
+
+/* Forms: readable & touch-friendly on iOS (prevents zoom) */
+input, select, textarea, button { font-size:16px; }
+input, select, textarea { min-height:44px; padding:.75rem .9rem; }
+
+/* Breakpoints */
+@media (min-width: 768px){
+  .two-col { grid-template-columns: 1fr 1fr; gap:24px; }
+  .form-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px){
+  .two-col { gap:28px; }
+}
+
+/* Reduce long words from breaking layout (e.g., long review text) */
+.rv2-quote { overflow-wrap:anywhere; }
+
+/* Reviews slider: comfortable on phones */
+.rv2-slider { width:100%; border-radius:20px; padding:22px 18px 38px; }
+.rv2-nav { padding:10px; }                /* bigger tap targets */
+.rv2-dots button { width:10px; height:10px; } /* easier to tap */
+@media (min-width: 640px){
+  .rv2-slider { padding:28px 28px 48px; }
+}
+
+  </style>
+<details class="nav-mobile">
+  <summary>Menu</summary>
+  <nav>…links…</nav>
+</details>
+
+<style>
+.nav-mobile summary { cursor:pointer; padding:.5rem .75rem; border:1px solid #e5e7eb; border-radius:10px; }
+.nav-mobile nav a { display:block; padding:.6rem .4rem; }
+@media (min-width: 768px){ .nav-mobile { display:none; } }
+</style>
+
+</head>
+<body id="top">
+  <!-- Removed the visible Skip link as requested -->
+
+  <header class="topbar" aria-label="Top navigation bar with contact and menu">
+    <div class="container row">
+      <a href="#top" class="brand" aria-label="Go to top">
+        <div class="logo"><img src="grlogo.png" alt="GR Automotive logo" loading="eager" /></div>
+        <div>
+          <div style="font-weight:800;">GR AUTOMOTIVE</div>
+          <small class="muted">Beltsville, MD</small>
+        </div>
+      </a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="cta-btn" href="#book" aria-label="Book an appointment">Book Appointment</a>
+    </div>
+  </header>
+
+  <section class="hero" role="banner">
+    <div class="glass container">
+      <div class="eyebrow">GR Automotive</div>
+      <h1>Auto Repair, <span>Performance</span> & Precision <span>Wheel Alignments</span> in Beltsville, MD</h1>
+      <p class="sub">From daily drivers to exotics, our technicians handle alignments, performance installs, routine maintenance, wheels & tires, cosmetic mods and suspension work. Quality care, guaranteed.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="tel:13019370026"><i class="fa-solid fa-phone"></i> Call Now</a>
+        <a class="btn" href="#book"><i class="fa-solid fa-calendar-check"></i> Request Appointment</a>
+        <a class="btn" href="https://maps.google.com/?q=10800+Hanna+St+Suite+S,+Beltsville,+MD+20705" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> Get Directions</a>
+      </div>
+      <div class="social-links" aria-label="Social media">
+        <a href="https://www.instagram.com/gr_automotive/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/GRAutomotive10800/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container quick" aria-label="Quick contact cards">
+    <div class="card"><i class="fa-solid fa-phone"></i><div><b>301-937-0026</b><span class="muted">Call for immediate help</span></div></div>
+    <a class="card" href="mailto:contact@grautomotive.net"><i class="fa-solid fa-envelope"></i><div><b>contact@grautomotive.net</b><span class="muted">Email our team</span></div></a>
+    <a class="card" href="https://www.google.com/search?q=GR+Automotive+Beltsville+MD+reviews" target="_blank" rel="noopener"><i class="fa-brands fa-google"></i><div><b>See Our Google Reviews</b><span class="muted">Leave one, too!</span></div></a>
+  </div>
+
+  <main id="main" class="container">
+    <section id="services">
+      <h2 class="section-title">Services</h2>
+      <p class="section-lead">We blend precision equipment with experience. Below are our most requested services. (Each can be its own page later for even better SEO.)</p>
+      <div class="services" role="list">
+        <article class="service" role="listitem">
+          <span class="tag">Most Popular</span>
+          <h3>Wheel Alignment</h3>
+          <p>Standard or custom-spec alignments for improved tire life, MPG and track-ready fitment. Performance alignments for lowered and high-performance vehicles.</p>
+        </article>
+        <article class="service" role="listitem">
+          <span class="tag">Performance</span>
+          <h3>Performance Modifications</h3>
+          <p>Aftermarket parts installation to meet or exceed your vehicle’s goals—exhaust, intakes, suspension, aero, and more. Ask about spec consultations.</p>
+        </article>
+        <article class="service" role="listitem">
+          <span class="tag">Maintenance</span>
+          <h3>Routine Maintenance</h3>
+          <p>Oil changes, fluid services, brakes, tune-ups and preventative maintenance to keep your car reliable and safe.</p>
+        </article>
+        <article class="service" role="listitem">
+          <span class="tag">Wheels & Tires</span>
+          <h3>Wheels & Tires</h3>
+          <p>Mount & balance with zero-scratch process on state‑of‑the‑art equipment. We service 12–36" wheels.</p>
+        </article>
+        <article class="service" role="listitem">
+          <span class="tag">Cosmetic</span>
+          <h3>Cosmetic Modifications</h3>
+          <p>Splitters, lips, lighting and more—OEM+ or aftermarket. Clean installs that look factory.</p>
+        </article>
+        <article class="service" role="listitem">
+          <span class="tag">Suspension</span>
+          <h3>Suspension Work</h3>
+          <p>Standard or aftermarket component installs with dialed adjustments by experienced technicians.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">Who We Are</h2>
+      <div class="about">
+        <div>
+          <p class="section-lead" style="text-align:left">GR Automotive takes pride in quality work. Our team brings experience and passion across all years, makes and models—from daily commuters to supercars. We build relationships and make sure you get exactly what you need, no matter how big or small the job.</p>
+          <ul class="muted" style="line-height:1.9">
+            <li>Locally owned & operated in Beltsville, MD</li>
+            <li>Precision alignment & performance specialists</li>
+            <li>Transparent recommendations and fair pricing</li>
+          </ul>
+        </div>
+        <div class="photo" aria-hidden="true">
+          <img src="merch.jpg" alt="Technician performing suspension work in a modern auto shop"/>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2 class="section-title">Our Gallery</h2>
+      <p class="section-lead">A peek at recent work. Swap these placeholders with your actual photos (we’ll add categories like Alignments, Wheels & Tires, Under the Hood, Merch).</p>
+      <div class="gallery" aria-label="Photo gallery">
+        <div class="g"><img src="grbenz.jpg" alt="Close-up of bronze wheel on red car"/></div>
+        <div class="g"><img src="grliftsupra.jpeg" alt="Alignment bay with car on rack"/></div>
+        <div class="g"><img src="grsupra.png" alt="Mechanic working under vehicle"/></div>
+        <div class="g"><img src="grr34.png" alt="Detailed engine bay"/></div>
+        <div class="g"><img src="grtesla.png" alt="Suspension components"/></div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <h2 class="section-title">Client Reviews</h2>
+<!-- Reviews: clean white card slider -->
+<div class="rv2-wrap">
+  <div class="rv2-slider" id="rv2">
+    <div class="rv2-slide rv2-active">
+      <div class="rv2-stars">★★★★★</div>
+      <p class="rv2-quote">“Super friendly shop—alignment and fitment are spot on.”</p>
+    </div>
+    <div class="rv2-slide">
+      <div class="rv2-stars">★★★★★</div>
+      <p class="rv2-quote">“Professional, fast, and the car drives perfectly after alignment.”</p>
+    </div>
+    <div class="rv2-slide">
+      <div class="rv2-stars">★★★★★</div>
+      <p class="rv2-quote">“Fair pricing and honest recommendations. I’ll be back.”</p>
+    </div>
+    <div class="rv2-slide">
+      <div class="rv2-stars">★★★★★</div>
+      <p class="rv2-quote">“They treated my build with care and it shows.”</p>
+    </div>
+    <div class="rv2-slide">
+      <div class="rv2-stars">★★★★★</div>
+      <p class="rv2-quote">“Great communication and quality work.”</p>
+    </div>
+
+    <button class="rv2-nav rv2-prev" aria-label="Previous">❮</button>
+    <button class="rv2-nav rv2-next" aria-label="Next">❯</button>
+    <div class="rv2-dots"></div>
+  </div>
+</div>
+
+
+
+    </section>
+
+    <section id="book">
+      <h2 class="section-title">Request an Appointment</h2>
+      <p class="section-lead">Tell us a bit about your vehicle and preferred time. We’ll confirm by phone or email.</p>
+      <div class="form-wrap">
+        <form class="form" id="appointment-form" method="post" action="#" aria-label="Appointment request form">
+          <!-- TODO: Replace action with Formspree / your backend endpoint. Example: https://formspree.io/f/xxxxxx -->
+          <div class="grid-2">
+            <div>
+              <label for="first">First Name</label>
+              <input id="first" name="first" autocomplete="given-name" required />
+            </div>
+            <div>
+              <label for="last">Last Name</label>
+              <input id="last" name="last" autocomplete="family-name" required />
+            </div>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" required />
+            </div>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label for="ymm">Year / Make / Model</label>
+              <input id="ymm" name="ymm" placeholder="e.g., 2019 Audi R8" required />
+            </div>
+            <div>
+              <label for="service">Service</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service…</option>
+                <option>Wheel Alignment</option>
+                <option>Performance Modifications</option>
+                <option>Routine Maintenance</option>
+                <option>Wheels & Tires</option>
+                <option>Cosmetic Modifications</option>
+                <option>Suspension Work</option>
+              </select>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div>
+              <label for="date">Preferred Date</label>
+              <input type="date" id="date" name="date" />
+            </div>
+            <div>
+              <label for="time">Preferred Time</label>
+              <input type="time" id="time" name="time" />
+            </div>
+          </div>
+          <div>
+            <label for="msg">Message</label>
+            <textarea id="msg" name="message" rows="4" placeholder="How can we help? Any mods, noises, or goals we should know about?"></textarea>
+          </div>
+          <button class="cta-btn submit" type="submit">Submit Request</button>
+          <p class="small">By submitting, you agree to be contacted by phone or email. We reply quickly during business hours.</p>
+        </form>
+        <div class="photo" aria-hidden="true">
+<!-- RIGHT SIDE: slideshow -->
+<div class="slideshow" id="shop-slideshow" aria-label="Shop photos" role="region">
+  <div class="slide is-active">
+    <img src="grgti.png" alt="GR Automotive shop photo 1">
+  </div>
+  <div class="slide">
+    <img src="grsupra.png" alt="GR Automotive shop photo 2">
+  </div>
+  <div class="slide">
+    <img src="grbanner.jpg" alt="GR Automotive shop photo 3">
+  </div>
+
+  <button class="ss-nav ss-prev" aria-label="Previous">❮</button>
+  <button class="ss-nav ss-next" aria-label="Next">❯</button>
+  <div class="ss-dots"></div>
+</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container cols">
+      <div>
+        <h3 style="margin-top:0">Contact</h3>
+        <p>
+          <strong>GR Automotive</strong><br/>
+          10800 Hanna St. Suite S, Beltsville, MD 20705<br/>
+          <a href="tel:13019370026">301-937-0026</a> · <a href="mailto:contact@grautomotive.net">contact@grautomotive.net</a>
+        </p>
+        <p class="social">
+          <a aria-label="Instagram" href="https://www.instagram.com/gr_automotive/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+          <a aria-label="Facebook" href="https://www.facebook.com/GRAutomotive10800/" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a>
+          <a aria-label="Google" href="https://www.google.com/search?q=GR+Automotive+Beltsville+MD+reviews" target="_blank" rel="noopener"><i class="fa-brands fa-google"></i></a>
+        </p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="#services">Services</a><br/><a href="#about">About</a><br/><a href="#gallery">Gallery</a><br/><a href="#reviews">Reviews</a><br/><a href="#book">Book Appointment</a></p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul class="hours" aria-label="Business hours">
+          <li>Mon–Fri: 9:00 AM – 6:00 PM</li>
+          <li>Sat: 9:00 AM – 3:00 PM</li>
+          <li>Sun: Closed</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="margin-top:18px;color:#d1d5db;font-size:12px">© <span id="yr"></span> GR Automotive. All rights reserved. • Website draft by Xpose Market.</div>
+  </footer>
+
+  <!-- Sticky mobile CTA bar -->
+  <div class="stickybar" role="navigation" aria-label="Sticky mobile actions">
+    <div class="container">
+      <a class="btn primary" href="tel:13019370026"><i class="fa-solid fa-phone"></i> Call</a>
+      <a class="btn" href="#book"><i class="fa-solid fa-calendar-check"></i> Book</a>
+      <a class="btn" href="https://maps.google.com/?q=10800+Hanna+St+Suite+S,+Beltsville,+MD+20705" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> Directions</a>
+    </div>
+  </div>
+
+  <!-- LocalBusiness / AutoRepair Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "GR Automotive",
+    "image": "https://grautomotive.net/logo.png",
+    "url": "https://grautomotive.net/",
+    "telephone": "+1-301-937-0026",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10800 Hanna St. Suite S",
+      "addressLocality": "Beltsville",
+      "addressRegion": "MD",
+      "postalCode": "20705",
+      "addressCountry": "US"
+    },
+    "priceRange": "$$",
+    "areaServed": "Beltsville MD and surrounding areas",
+    "sameAs": [
+      "https://www.facebook.com/GRAutomotive10800/",
+      "https://www.instagram.com/gr_automotive/"
+    ]
+  }
+  </script>
+
+  <script>
+    // set year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // basic client-side handler demo
+    document.getElementById('appointment-form').addEventListener('submit', function(e){
+      // Remove this block when real backend is connected
+      e.preventDefault();
+      alert('Thanks! Your request was captured locally in this demo. Connect this form to Formspree or your backend to receive submissions.');
+    });
+  </script>
+<script>
+(() => {
+  const slider = document.getElementById('shop-slideshow');
+  if (!slider) return;
+
+  const slides = Array.from(slider.querySelectorAll('.slide'));
+  const prevBtn = slider.querySelector('.ss-prev');
+  const nextBtn = slider.querySelector('.ss-next');
+  const dotsWrap = slider.querySelector('.ss-dots');
+
+  // build dots
+  slides.forEach((_, idx) => {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', `Go to slide ${idx+1}`);
+    b.addEventListener('click', () => { go(idx); resetAuto(); });
+    dotsWrap.appendChild(b);
+  });
+
+  const dots = Array.from(dotsWrap.children);
+  let i = 0, timer;
+
+  function go(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s, k) => s.classList.toggle('is-active', k === i));
+    dots.forEach((d, k) => d.classList.toggle('active', k === i));
+  }
+  function next(){ go(i + 1); }
+  function prev(){ go(i - 1); }
+
+  nextBtn.addEventListener('click', () => { next(); resetAuto(); });
+  prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
+
+  function startAuto(){ timer = setInterval(next, 4000); }
+  function resetAuto(){ clearInterval(timer); startAuto(); }
+
+  go(0);
+  startAuto();
+
+  // Optional: pause on hover
+  slider.addEventListener('mouseenter', () => clearInterval(timer));
+  slider.addEventListener('mouseleave', startAuto);
+})();
+</script>
+<script>
+(() => {
+  const wrap = document.getElementById('rv-slider');
+  if (!wrap) return;
+
+  const slides = Array.from(wrap.querySelectorAll('.rv-slide'));
+  const dotsWrap = document.getElementById('rv-dots');
+  const prev = wrap.querySelector('.rv-prev');
+  const next = wrap.querySelector('.rv-next');
+
+  // Build dots
+  slides.forEach((_, idx) => {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', `Go to review ${idx+1}`);
+    b.addEventListener('click', () => { go(idx); reset(); });
+    dotsWrap.appendChild(b);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  let i = 0, timer;
+  function go(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s,k)=> s.classList.toggle('is-active', k===i));
+    dots.forEach((d,k)=> d.classList.toggle('active', k===i));
+  }
+  function nextSlide(){ go(i+1); }
+  function prevSlide(){ go(i-1); }
+  function start(){ timer = setInterval(nextSlide, 5000); }
+  function reset(){ clearInterval(timer); start(); }
+
+  prev.addEventListener('click', () => { prevSlide(); reset(); });
+  next.addEventListener('click', () => { nextSlide(); reset(); });
+
+  wrap.addEventListener('mouseenter', () => clearInterval(timer));
+  wrap.addEventListener('mouseleave', start);
+
+  go(0); start();
+})();
+</script>
+<script>
+(() => {
+  const el = document.getElementById('rv2');
+  if (!el) return;
+  const slides = Array.from(el.querySelectorAll('.rv2-slide'));
+  const dotsWrap = el.querySelector('.rv2-dots');
+  const prev = el.querySelector('.rv2-prev');
+  const next = el.querySelector('.rv2-next');
+
+  slides.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', `Go to review ${i+1}`);
+    b.addEventListener('click', () => { go(i); reset(); });
+    dotsWrap.appendChild(b);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  let i = 0, timer;
+  function go(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach((s,k)=> s.classList.toggle('rv2-active', k===i));
+    dots.forEach((d,k)=> d.classList.toggle('rv2-active', k===i));
+  }
+  function nextSlide(){ go(i+1); }
+  function prevSlide(){ go(i-1); }
+  function start(){ timer = setInterval(nextSlide, 5000); }
+  function reset(){ clearInterval(timer); start(); }
+
+  prev.addEventListener('click', ()=>{ prevSlide(); reset(); });
+  next.addEventListener('click', ()=>{ nextSlide(); reset(); });
+
+  el.addEventListener('mouseenter', ()=> clearInterval(timer));
+  el.addEventListener('mouseleave', start);
+
+  go(0); start();
+})();
+</script>
+
+</body>
+</html>
